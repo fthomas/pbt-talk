@@ -76,14 +76,34 @@
         </section>
 
         <section>
-          Testen mit Properties ist <i>nicht</i> beschränkt auf Unittests!
+          Testen mit Properties ist <i>nicht</i>auf Unittests beschränkt!
         </section>
 
         <section>
           <h2>Was ist property-based testing?</h2>
-          Eine Eigenschaft beschreibt Aspekte die ergebnisse erfüllen für beliebige eingaben erfüllen müssen
-          
-          Spezifikation von Eigenschaften, die für alle möglichen Eingabeparameter
+          <ul>
+            <li>Spezifikation einer Eigenschaft, die für beliebige Eingaben zutrifft</li>
+            <li>Test-Framework überprüft diese Eigenschaft mit vielen zufälligen Inputs</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Was ist property-based testing?</h2>
+          <p>
+            Beispiel: Beim Zusammenfügen von zwei Listen ist die Länge der resultierenden
+            Liste die Summe der Längen der Ausgangslisten.
+          </p>
+        </section>
+        
+        <section>
+          <h2>Was ist property-based testing?</h2>
+          <p>
+            Beispiel: Beim Zusammenfügen von zwei Listen ist die Länge der resultierenden
+            Liste die Summe der Längen der Ausgangslisten.
+          </p>
+          <p>
+            l1, l2: l1.append(l2).length == l1.length + l2.length
+          </p>
         </section>
         
           <!--

@@ -72,7 +72,7 @@
         <section>
           <h2>Was ist property-based testing?</h2>
           <ul>
-            <li>Spezifikation einer Eigenschaft, die für beliebige Eingaben zutrifft</li>
+            <li>Spezifikation einer Eigenschaft, die für alle Eingaben zutrifft</li>
             <li>Test-Framework überprüft diese Eigenschaft mit vielen zufälligen Inputs</li>
           </ul>
         </section>
@@ -88,18 +88,6 @@
           </code></pre>
         </section>
 
-          <!--
-          The difference between a traditional test and a property is that tests traditionally
-          verify behavior based on specific data points checked by the test.
-          A test might pass three or four specific lists of different sizes to a method 
-          under test that takes a list, for example, and check the results are as expected. 
-          A property, by contrast, would describe at a high level the preconditions of the
-          method under test and specify some aspect of the result that should hold no
-          matter what valid list is passed.
-          -->
-          
-        
-
         <section>
           <h2>Tests mit Beispielen</h2>
           <ul>
@@ -113,23 +101,24 @@
         <section>
           <h2>Tests mit Properties</h2>
           <ul>
-            <li>Spezifikation einer Eigenschaft, die für alle Eingaben zutrifft</li>
+            <li>Spezifikation von Eigenschaften, die für alle Eingaben zutreffen</li>
+            <li>(teilweise) schwierig zu schreiben</li>
+            <li>schwierig Randfälle zu übersehen</li>
+            <li>ein Property deckt eine Vielzahl von Beispielen ab</li>
           </ul>
         </section>
             
-            
-        <section>
-    <p class="fragment grow">grow</p>
-    <p class="fragment shrink">shrink</p>
-    <p class="fragment roll-in">roll-in</p>
-    <p class="fragment fade-out">fade-out</p>
-    <p class="fragment current-visible">visible only once</p>
-    <p class="fragment highlight-current-blue">blue only once</p>
-    <p class="fragment highlight-red">highlight-red</p>
-    <p class="fragment highlight-green">highlight-green</p>
-    <p class="fragment highlight-blue">highlight-blue</p>
-</section>
-            
+
+
+          <!--
+          The difference between a traditional test and a property is that tests traditionally
+          verify behavior based on specific data points checked by the test.
+          A test might pass three or four specific lists of different sizes to a method 
+          under test that takes a list, for example, and check the results are as expected. 
+          A property, by contrast, would describe at a high level the preconditions of the
+          method under test and specify some aspect of the result that should hold no
+          matter what valid list is passed.
+          -->            
                 
                 <section>
                 </section>

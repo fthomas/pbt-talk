@@ -171,10 +171,27 @@ Property: under specified circumstances, it's always true
                 
                 <section>
                 - gut geeignet, wenn umkehrfunktion bekannt ist
-                - verhalten soll analog zu bestehenden funktionen sein
+                - verhalten soll analog zu bestehenden funktionen sein  - referenzimplementierung
                 - laws / comparator contracts von schnittstellen
+                - relational properties : eine funktion mit zwei eingaben miteinander in beziehung setzen
+                  - man testet nicht genaue ausgabe sondern setzt mehrere ausgaben miteinander in beziehung
                 </section>
-                
+
+                <section>
+                  - iteratives vorgehen
+                  - mit einfachen fakten beginnen, die wahr sind
+                  - was ist auf keinen fall akzeptabel
+                  - ausgabe muss immer kleiner sein als eingabe
+                  - man legt eine Box um sein problem herum
+                  - simple sanity checks anstatt voller spezifikation
+                  - boundaries for the implementation
+                  - lieber nicht vollständig als zu kompliziert
+                  - more properties, die mehr funktionalität abdecken
+                  - direkt und möglichst anders als den zu testenden code
+                  - volle spezifikation ist manchmal zu rigide, jede code änderung
+                    würde teständerung nach sich ziehen
+                  - innerhalb dieser grenzen kann sich meine funktion bewegen
+                </section>                
 
                 
                 <section>
@@ -197,6 +214,7 @@ Property: under specified circumstances, it's always true
                     properties
                     generators
                     test case simplification
+                    
                 </section>
             
             

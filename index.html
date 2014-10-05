@@ -165,11 +165,38 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
         </section>
 
         <section>
+          <h2>Property-Design</h2>
+          <ul>
+            <li>unvollständige Properties</li>
+            <li>relationale Properties</li>
+            <li>Referenzimplementierung</li>
+            <li>Round-trip Properties</li>
+            <li>Verifikation von informellen Verträgen (compareTo)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>unvollständige Properties</h2>
+          <ul>
+            <li>mit einfachen Fakten beginnen</li>
+            <!-- iterativ vorgehen -->
+            <li>Properties legen einen Rahmen um die Implementierung</li>
+            <!-- nicht akzeptable Ausgaben werden ausgeschlossen -->
+            <li>vollständige Spezifikation kann Code Duplizierung bedeuten</li>
+            <!-- Test-Code sollte sich von Implementierung unterscheiden -->
+            <!-- lieber unvollständig als zu komplex -->
+            <!-- mehrere kleine Properties, die jeweils eine Eigenschaft abdeckt (SRP) -->
+          </ul>
+        </section>
+
+        <section>
           <h2>Testen mit Properties</h2>
           <ul>
             <li>Spezifikation von Eigenschaften, die für alle Eingaben zutreffen</li>
             <li>Dokumentation auf höherer Ebene</li>
             <li>(teilweise) schwierig zu schreiben</li>
+            <!-- Properties zu schreiben erzwingt besseres Verständnis der zu
+            implementierenden Funktionalität -->
             <li>Randfälle müssen nicht extra betrachtet werden</li>
             <li>
               ein Property deckt eine Vielzahl von Beispielen ab<br/>
@@ -178,63 +205,18 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
           </ul>
         </section>
 
-        <!--
-        <section>
-          <h2>Testabdeckung</h2>
-          <p>Beispiel vs. Property vs. Beweis</p>
-          <img src="coverage.png"/>
-          <small>Quelle: <a href="http://www.slideshare.net/chris089/propertybased2014-0823propertybased-testingfroscon9">property-based testing</a></small>
-        </section>
-        -->
 
-        <section>
-          <h2>Property-Design</h2>
-          <ul>
-            <li>unvollständige Properties</li>
-            <li>relationale Properties</li>
-            <li>Referenzimplementierung</li>
-            <li>Round-trip Properties</li>
-            <li>Verifikation von informellen Verträgen</li>
-          </ul>
-        </section>
-
-
-
-                <section>
-
-                - laws / comparator contracts von schnittstellen
-
-                </section>
-
-                <section>
-                  - iteratives vorgehen
-                  - mit einfachen fakten beginnen, die wahr sind
-                  - was ist auf keinen fall akzeptabel
-                  - ausgabe muss immer kleiner sein als eingabe
-                  - man legt eine Box um sein problem herum
-                  - simple sanity checks anstatt voller spezifikation
-                  - boundaries for the implementation
-                  - lieber nicht vollständig als zu kompliziert
-                  - more properties, die mehr funktionalität abdecken
-                  - direkt und möglichst anders als den zu testenden code
-                  - volle spezifikation ist manchmal zu rigide, jede code änderung
-                    würde teständerung nach sich ziehen
-                  - innerhalb dieser grenzen kann sich meine funktion bewegen
-                </section>                
 
                 
                 <section>
                     <ul>
                     property is a high-level specification of behavior that should hold for a range of data points
-                        <li>trennung der test und testdaten</li>
-                        <li>JUnit tests - ScalaCheck properties</li>
-                        <li>can replace several tests with one property</li>
+
                         <li>usage examples vs. general behavior by abstracting over input parameters</li>
                         <li>higher abstraction level than examples</li>
                         <li>properties force to think more about impl and specification</li>
                         <li>keine löcher in der impl und spec</li>
                         <li>bei junit tests müssen randfälle sorgfältig ausgewählt werden</li>
-                        <li>mischen von stilen ist ok</li>
                     </ul>
                 </section>
             

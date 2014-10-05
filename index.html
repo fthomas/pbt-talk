@@ -212,7 +212,7 @@ forAll(genMyAndHashMap) {
           <p>Wenn Umkehrfunktion vorhanden: <code>x == g(f(x))</code></p>
           <pre><code data-trim>
 forAll {
-  (s: String) => utf8Decode(utf8Encode(s))
+  (s: String) => s == utf8Decode(utf8Encode(s))
 }
           </code></pre>
         </section>

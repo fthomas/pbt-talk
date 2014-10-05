@@ -133,10 +133,11 @@
 
         <section>
           <h2>Was ist property-based testing?</h2>
-          <p>
-            Test-Framework überprüft Eigenschaften mit <i>vielen</i> <i>zufälligen</i>
-            Testdaten
-          </p>
+          <ul>
+            <li>Entwickler schreibt Property</li>
+            <li>Test-Framework generiert <i>viele</i> <i>zufällige</i> Testdaten</li>
+            <li>... und validiert Property mit diesen Testdaten</li>
+          </ul>
           <pre class="fragment fade-in"><code data-trim style="text-align: center">
 l1 = [],    l2 = [] : l1.append(l2).length == l1.length + l2.length
 l1 = [1],   l2 = [] : l1.append(l2).length == l1.length + l2.length

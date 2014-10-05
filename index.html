@@ -197,9 +197,19 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
         <section>
           <h2>Referenzimplementierung</h2>
           <p>Methoden einer neuen Klasse <code>MyMap</code> sollen sich verhalten wie <code>HashMap</code></p>
-          <pre class="fragment fade-in"><code data-trim>
-            forAll(genMyAndHashMap) {
+          <pre><code data-trim>
+forAll(genMyAndHashMap) {
   (m: MyMap, h: HashMap) => m.foo() == h.foo()
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Round-trip Properties</h2>
+          <p>Wenn Umkehrfunktion vorhanden: x == g(f(x)), x != f(x)</p>
+          <pre><code data-trim>
+forAll {
+  (s: String) => utf8Decode(utf8Encode(s))
 }
           </code></pre>
         </section>

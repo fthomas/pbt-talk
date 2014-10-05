@@ -190,10 +190,26 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
         </section>
 
         <section>
+          <h2>relationale Properties</h2>
+          ???
+        </section>
+        
+        <section>
+          <h2>Referenzimplementierung</h2>
+          <p>Methoden einer neuen Klasse <code>X</code> sollen sich verhalten wie <code>R</code></p>
+          <pre class="fragment fade-in"><code data-trim style="text-align: center">
+            forAll(genXR) {
+  (x: X, r: R) => x.foo() == r.foo()
+}
+          </code></pre>
+        </section>
+
+        <section>
           <h2>Testen mit Properties</h2>
           <ul>
             <li>Spezifikation von Eigenschaften, die für alle Eingaben zutreffen</li>
-            <li>Dokumentation auf höherer Ebene</li>
+            <li>Trennung der Tests und Generierung der Testdaten</li>
+            <!-- Dokumentation auf höherer Ebene -->
             <li>(teilweise) schwierig zu schreiben</li>
             <!-- Properties zu schreiben erzwingt besseres Verständnis der zu
             implementierenden Funktionalität -->
@@ -206,9 +222,7 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
         </section>
 
         <section>
-          <h2>The End</h2>
-
-          <h2>Resources</h2>
+          <h2>The End</h2>>
           <ul>
             <li><a href="http://www.artima.com/shop/scalacheck">ScalaCheck: The Definitive Guide</a></li>
             <li>Slides: <a href="http://fthomas.github.io/pbt-talk">http://fthomas.github.io/pbt-talk</a></li>

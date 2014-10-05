@@ -73,6 +73,40 @@
         </section>
 
         <section>
+          <h2>Testen mit Beispielen</h2>
+          <pre><code data-trim style="text-align: center">
+            assert("Hallo Welt".split(" ") == ["Hallo", "Welt"])
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Testen mit Beispielen</h2>
+          <ul>
+            <li>Vergleich von Eingaben mit erwarteten Ausgaben</li>
+            <li>einfach zu schreiben</li>
+            <li>einfach zu erweitern</li>
+            <li>Dokumentation für andere Entwickler</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Testen mit Beispielen</h2>
+          <ul>
+            <li>Vergleich von Eingaben mit erwarteten Ausgaben</li>
+            <li>einfach zu schreiben</li>
+            <li>einfach Randfälle zu übersehen</li>
+            <li>Testabdeckung abhängig von Anzahl der Beispiele</li>
+            <li>einfach Randfälle zu übersehen</li>
+            <li>Testabdeckung abhängig von Anzahl der Beispiele</li>
+            <li>kommunikation</li>
+            api herausfinden discover
+            Unit testing provides a sort of living documentation of the system. Developers looking to learn what functionality is provided by a unit and how to use it can look at the unit tests to gain a basic understanding of the unit's interface (API).
+            - design tool
+          </ul>
+        </section>
+        
+
+        <section>
           <h2>Was ist property-based testing?</h2>
         </section>
 
@@ -87,7 +121,7 @@
         <section>
           <h2>Beispiel</h2>
           <p>
-            Die Addition von Zahlen ist kommutativ.
+            Die Addition von Zahlen ist kommutativ
           </p>
           <pre class="fragment fade-in"><code data-trim style="text-align: center">
             forall a, b: a + b == b + a
@@ -98,7 +132,7 @@
           <h2>Beispiel</h2>
           <p>
             Beim Zusammenfügen von zwei Listen ist die Länge der neuen
-            Liste die Summe der Längen der Ausgangslisten.
+            Liste die Summe der Längen der Ausgangslisten
           </p>
           <pre class="fragment fade-in"><code data-trim style="text-align: center">
             forall l1, l2: l1.append(l2).length == l1.length + l2.length

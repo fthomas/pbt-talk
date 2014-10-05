@@ -197,7 +197,7 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
         <section>
           <h2>Referenzimplementierung</h2>
           <p>Methoden einer neuen Klasse <code>X</code> sollen sich verhalten wie <code>R</code></p>
-          <pre class="fragment fade-in"><code data-trim style="text-align: center">
+          <pre class="fragment fade-in"><code data-trim>
             forAll(genXR) {
   (x: X, r: R) => x.foo() == r.foo()
 }

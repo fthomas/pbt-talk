@@ -15,12 +15,22 @@ val p0 = forAll {
     val t = pbt.StringUtils.truncate(s, n)
     t.dropRight(3).length <= s.length
 }
-
 p0.check
+
 val p1 = forAll {
   (s: String, n: Int) =>
     val t = pbt.StringUtils.truncate(s, n)
     s.startsWith(t.dropRight(3))
 }
-
 p1.check
+
+val p2 = forAll {
+  (s: String, n: Int) =>
+    val t = pbt.StringUtils.truncate(s, n)
+    if (n < 0) t == ""
+    else {
+      (s.length <= n && t == s) ||
+      (s.length > n  && t == s.take(n) + "...")
+    }
+}
+p2.check

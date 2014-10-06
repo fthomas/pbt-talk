@@ -15,7 +15,7 @@ import scala.math.signum
 
 trait ComparableSpec[T <: Comparable] extends Properties("Comparable") {
   
-  property("x < y") = forAll {
+  property("antisymmetry") = forAll {
     (x: T, y: T) => signum(x.compareTo(y)) == -signum(y.compareTo(x))
   }
 

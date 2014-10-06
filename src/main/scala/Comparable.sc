@@ -10,10 +10,27 @@ x.compareTo(y)==0 implies that sgn(x.compareTo(z)) == sgn(y.compareTo(z)), for a
 (x.compareTo(y)==0) == (x.equals(y))
 */
 
-trait ComparableSpec[T <: java.lang.Comparable] extends Properties("Comparable") {
+import java.lang.Comparable
+import scala.math.signum
 
-  property("") = forAll {
-    (x: T, y: T) => 
+trait ComparableSpec[T <: Comparable] extends Properties("Comparable") {
+  
+  property("x < y") = forAll {
+    (x: T, y: T) => signum(x.compareTo(y)) == -signum(y.compareTo(x))
   }
 
+  property("transitivity") = forAll {
+    (x: T, y: T, z: T) =>
+      (x.compareTo(y) > 0 && y.compareTo(z) > 0) ==> x.compareTo(z) > 0
+  }
+
+  property("x == y => (x < z) == (y < z)") = forAll {
+    (x: T, y: T, z: T) =>
+      (x.compareTo(y) == 0) ==> signum(x.compareTo(z)) == signum(y.compareTo(z))
+  }
+
+  property("natural ordering is consistent with equals") = forAll {
+    (x: T, y: T) =>
+      (x.compareTo(y) == 0) ==> x.equals(y)
+  }
 }

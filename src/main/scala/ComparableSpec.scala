@@ -10,13 +10,12 @@ Copied from http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html:
 4. (x.compareTo(y)==0) == (x.equals(y))
 */
 
-import java.lang.Comparable
 import scala.math.signum
 
 import org.scalacheck._
 import org.scalacheck.Prop._
 
-class ComparableSpec[T <: Comparable[T] : Arbitrary] extends Properties("Comparable") {
+class ComparableSpec[T <: Comparable[T] : Arbitrary](name: String) extends Properties(name + "Comparable") {
 
   property("antisymmetry") = forAll {
     (x: T, y: T) =>
@@ -55,6 +54,6 @@ class ComparableSpec[T <: Comparable[T] : Arbitrary] extends Properties("Compara
 
   property("consistency with equals 2") = forAll {
     (x: T) =>
-      (x.compareTo(x) == 0) == x.equals(x)
+      (x.compareTo(x) == 0) ?= x.equals(x)
   }
 }

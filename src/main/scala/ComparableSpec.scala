@@ -15,24 +15,38 @@ import scala.math.signum
 import org.scalacheck._
 import org.scalacheck.Prop._
 
-class ComparableSpec[T <: Comparable[T] : Arbitrary](name: String) extends Properties(name + "Comparable") {
+class ComparableSpec[T <: Comparable[T] : Arbitrary] extends Properties("Comparable") {
 
   property("antisymmetry") = forAll {
     (x: T, y: T) =>
       signum(x.compareTo(y)) == -signum(y.compareTo(x))
   }
 
-  property("transitivity") = forAll {
+  property("transitivity v1") = forAll {
     (x: T, y: T, z: T) =>
       (x.compareTo(y) > 0 && y.compareTo(z) > 0) ==> (x.compareTo(z) > 0)
   }
 
-  property("transitivity") = forAll {
+  property("transitivity v2") = forAll {
     (x: T, y: T, z: T) =>
       val precondition = x.compareTo(y) > 0 && y.compareTo(z) > 0
       classify(precondition, "fulfilled", "unfulfilled") {
         if (precondition) x.compareTo(z) > 0
         else true
+      }
+  }
+
+  property("transitivity v3") = forAll {
+    (x: T, y: T, z: T) =>
+      val precondition1 = x.compareTo(y) > 0 && y.compareTo(z) > 0
+      val precondition2 = x.compareTo(y) < 0 && y.compareTo(z) < 0
+
+      classify(precondition1, "+cond1", "-cond1") {
+        classify(precondition2, "+cond2", "-cond2") {
+          if (precondition1) x.compareTo(z) > 0
+          else if (precondition2) x.compareTo(z) < 0
+          else true
+        }
       }
   }
 

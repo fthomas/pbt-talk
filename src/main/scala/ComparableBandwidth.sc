@@ -11,5 +11,5 @@ implicit val arbitraryBandwidth: Arbitrary[Bandwidth] =
 
 arbitraryBandwidth.arbitrary.sample
 
-val bandwidthSpec = new ComparableSpec[Bandwidth]("Bandwidth")
+val bandwidthSpec = new ComparableSpec[Bandwidth]
 bandwidthSpec.check

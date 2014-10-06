@@ -4,9 +4,8 @@ stringSpec.check(_.withMinSuccessfulTests(1000))
 import org.scalacheck._
 import org.scalacheck.Arbitrary._
 //
-implicit val arbitraryInteger =
-  Arbitrary(arbitrary[Int].map(i => new Integer(i)))
+implicit val arbitraryByte =
+  Arbitrary(arbitrary[Byte].map(i => new java.lang.Byte(i)))
 //
-val integerSpec = new ComparableSpec[java.lang.Integer]
-integerSpec.check
-
+val byteSpec = new ComparableSpec[java.lang.Byte]
+byteSpec.check

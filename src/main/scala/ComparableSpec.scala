@@ -52,4 +52,9 @@ class ComparableSpec[T <: Comparable[T] : Arbitrary] extends Properties("Compara
         (x.compareTo(y) == 0) == x.equals(y)
       }
   }
+
+  property("consistency with equals 2") = forAll {
+    (x: T) =>
+      (x.compareTo(x) == 0) == x.equals(x)
+  }
 }

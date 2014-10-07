@@ -172,6 +172,7 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
 
         <section>
           <h2>Property-Design</h2>
+          <!--
           <ul>
             <li>unvollständige Properties</li>
             <li>relationale Properties</li>
@@ -179,6 +180,7 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
             <li>Round-trip Properties</li>
             <li>Verifikation von informellen Verträgen (<code>compareTo</code>)</li>
           </ul>
+          -->
         </section>
 
         <section>
@@ -197,13 +199,15 @@ l1 = [1,2],     l2 = [] : l1.append(l2).length == l1.length + l2.length
 
         <section>
           <h2>relationale Properties</h2>
+          <!--
           <pre><code data-trim>
 // Test für f        
 forAll {
   (x: T, y: T) => R1(x, y) == R2(f(x), f(y))
 }
           </code></pre>
-          <pre class="fragment fade-in"><code data-trim>
+          -->
+          <pre><code data-trim>
 forAll {
   (x: T, y: T) => (x.compareTo(y) == 0) == x.equals(y)
 }

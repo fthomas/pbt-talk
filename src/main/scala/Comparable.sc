@@ -1,6 +1,7 @@
-val stringSpec = new ComparableSpec[String]
+val stringSpec = new ComparableSpecV2[String]
 stringSpec.check(_.withMinSuccessfulTests(1000))
 //
+/*
 import org.scalacheck._
 import org.scalacheck.Arbitrary._
 //
@@ -9,3 +10,4 @@ implicit val arbitraryByte =
 //
 val byteSpec = new ComparableSpec[java.lang.Byte]
 byteSpec.check
+*/

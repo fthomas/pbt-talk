@@ -6,3 +6,5 @@ libraryDependencies ++= Seq(
   "com.google.guava" % "guava" % "18.0",
   "org.scalacheck" %% "scalacheck" % "1.11.6"
 )
+
+scalariformSettings

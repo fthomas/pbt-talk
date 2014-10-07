@@ -15,7 +15,7 @@ import scala.math.signum
 import org.scalacheck._
 import org.scalacheck.Prop._
 
-class ComparableSpec[T <: Comparable[T] : Arbitrary] extends Properties("Comparable") {
+class ComparableSpecV3[T <: Comparable[T]: Arbitrary] extends Properties("Comparable") {
 
   property("antisymmetry") = forAll {
     (x: T, y: T) =>

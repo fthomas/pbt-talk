@@ -220,8 +220,10 @@ forAll {
             die Methoden von <code>HashMap</code>
           </p>
           <pre><code data-trim>
-forAll(genMyAndHashMap) {
-  (m: MyMap, h: HashMap) => m.foo() == h.foo()
+forAll {
+  (h: HashMap) =>
+    val m = MyMap.fromHashMap(h)
+    m.foo() == h.foo()
 }
           </code></pre>
         </section>
